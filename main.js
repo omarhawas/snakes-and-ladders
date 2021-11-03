@@ -6,35 +6,41 @@ let gameState = {
 function updatePosition(gameState, dieRoll, player1Turn) {
   if (player1Turn === true) {
     let newPosition = gameState.player1 + dieRoll;
-    if (newPosition > 50) {
-      newPosition = 50;
+    if (newPosition > 100) {
+      newPosition = 100;
     }
     gameState.player1 = newPosition;
   } else {
     let newPosition = gameState.player2 + dieRoll;
-    if (newPosition > 50) {
-      newPosition = 50;
+    if (newPosition > 100) {
+      newPosition = 100;
     }
     gameState.player2 = newPosition;
   }
 }
 
 function determineWinner() {
-  if (gameState.player1 >= 50) {
+  if (gameState.player1 >= 100) {
     console.log("Player 1 wins");
-  } else if (gameState.player2 >= 50) {
+  } else if (gameState.player2 >= 100) {
     console.log("Player 2 wins");
   }
 }
 
 function moveLadder(newPosition) {
   let updatedPosition;
-  if (newPosition === 7) {
-    updatedPosition = 17;
-  } else if (newPosition === 12) {
-    updatedPosition = 22;
-  } else if (newPosition === 24) {
-    updatedPosition = 34;
+  if (newPosition === 3) {
+    updatedPosition = 51;
+  } else if (newPosition === 6) {
+    updatedPosition = 27;
+  } else if (newPosition === 20) {
+    updatedPosition = 70;
+  } else if (newPosition === 36) {
+    updatedPosition = 55;
+  } else if (newPosition === 63) {
+    updatedPosition = 95;
+  } else if (newPosition === 68) {
+    updatedPosition = 98;
   } else {
     updatedPosition = newPosition;
   }
@@ -43,10 +49,20 @@ function moveLadder(newPosition) {
 
 function moveSnake(newPosition) {
   let updatedPosition;
-  if (newPosition === 11) {
+  if (newPosition === 25) {
     updatedPosition = 5;
-  } else if (newPosition === 21) {
-    updatedPosition = 10;
+  } else if (newPosition === 34) {
+    updatedPosition = 1;
+  } else if (newPosition === 47) {
+    updatedPosition = 19;
+  } else if (newPosition === 65) {
+    updatedPosition = 52;
+  } else if (newPosition === 87) {
+    updatedPosition = 57;
+  } else if (newPosition === 91) {
+    updatedPosition = 61;
+  } else if (newPosition === 99) {
+    updatedPosition = 69;
   } else {
     updatedPosition = newPosition;
   }
