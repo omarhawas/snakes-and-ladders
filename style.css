@@ -22,8 +22,8 @@ table {
   margin-left: 50px;
 }
 
-#reset {
-  margin-left: 270px;
+#playAgain {
+  margin-left: 245px;
 }
 
 h1 {
@@ -60,4 +60,12 @@ h1 {
 }
 
 .winText {
+}
+
+.die-image {
+  margin-top: -500px;
+}
+
+.winText {
+  color: grey;
 }
