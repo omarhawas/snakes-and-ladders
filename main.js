@@ -11,14 +11,19 @@ let player1 = document.getElementById("player1");
 
 let player2 = document.getElementById("player2");
 
-let resetElm = document.getElementById("playAgain");
-resetElm.addEventListener("click", init);
+let playAgainElm = document.getElementById("playAgain");
 
 let winTextElm = document.querySelector(".winText");
 
 let player1Btn = document.getElementById("player1Btn");
 
 let player2Btn = document.getElementById("player2Btn");
+
+let resetBtn = document.getElementById("reset");
+
+let p1ScoreElm = document.querySelector(".p1Score");
+
+let p2ScoreElm = document.querySelector(".p2Score");
 
 let die1 = document.getElementById("die-1.png");
 let die2 = document.getElementById("die-2.png");
@@ -180,6 +185,26 @@ function movePlayer2() {
   positionElement.appendChild(player2);
 }
 
+function playAgain() {
+  gameState.player1 = 1;
+  gameState.player2 = 1;
+  disableButton(true);
+  movePlayer1();
+  movePlayer2();
+  winTextElm.innerText = "Who's going to win!?";
+}
+
+function reset() {
+  gameState.player1 = 1;
+  gameState.player2 = 1;
+  gameState.player1Score = 0;
+  gameState.player2Score = 0;
+  disableButton(true);
+  movePlayer1();
+  movePlayer2();
+  winTextElm.innerText = "Who's going to win!?";
+}
+
 /////event listeners/////
 
 player1Btn.addEventListener("click", function (event) {
@@ -206,18 +231,11 @@ player2Btn.addEventListener("click", function (event) {
   updateScore();
 });
 
-function init() {
-  gameState = {
-    player1: 1,
-    player2: 1,
-  };
-  disableButton(true);
-  movePlayer1();
-  movePlayer2();
-  winTextElm.innerText = "Who's going to win!?";
-}
+playAgainElm.addEventListener("click", playAgain);
+
+resetBtn.addEventListener("click", reset);
 
 function updateScore() {
-  let player1Score = gameState.player1Score;
-  let player2Score = gameState.player2Score;
+  p1ScoreElm.innerText = `Player 1 Score: ${gameState.player1Score}`;
+  p2ScoreElm.innerText = `Player 2 Score: ${gameState.player2Score}`;
 }

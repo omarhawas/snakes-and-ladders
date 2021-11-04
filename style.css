@@ -23,7 +23,11 @@ table {
 }
 
 #playAgain {
-  margin-left: 245px;
+  margin-left: 50px;
+}
+
+#reset {
+  margin-left: 140px;
 }
 
 h1 {
@@ -43,23 +47,13 @@ h1 {
   font-size: 15px;
 }
 
-#p1-score-title {
+.p1Score {
   color: red;
 }
 
-#p2-score-title {
-  color: blue;
-}
-
-.p1Score,
 .p2Score {
-  position: relative;
-  height: 50px;
-  min-width: 50px;
-  color: red;
-}
-
-.winText {
+  margin-top: 20px;
+  color: blue;
 }
 
 .die-image {
@@ -67,5 +61,6 @@ h1 {
 }
 
 .winText {
-  color: grey;
+  color: black;
+  margin-top: 30px;
 }
