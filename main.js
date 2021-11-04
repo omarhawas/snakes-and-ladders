@@ -1,6 +1,8 @@
 let gameState = {
   player1: 1,
   player2: 1,
+  player1Score: 0,
+  player2Score: 0,
 };
 
 function updatePosition(gameState, dieRoll, player1Turn) {
@@ -16,14 +18,6 @@ function updatePosition(gameState, dieRoll, player1Turn) {
       newPosition = 100;
     }
     gameState.player2 = newPosition;
-  }
-}
-
-function determineWinner() {
-  if (gameState.player1 >= 100) {
-    console.log("Player 1 wins");
-  } else if (gameState.player2 >= 100) {
-    console.log("Player 2 wins");
   }
 }
 
@@ -70,12 +64,39 @@ function moveSnake(newPosition) {
 }
 
 function rollDie() {
-  return Math.floor(Math.random() * 6) + 1;
+  let num = Math.floor(Math.random() * 6) + 1;
+  if (num === 1) {
+    die1.style.display = "block";
+  } else if (num === 2) {
+    die2.style.display = "block";
+  } else if (num === 3) {
+    die3.style.display = "block";
+  } else if (num === 4) {
+    die4.style.display = "block";
+  } else if (num === 5) {
+    die5.style.display = "block";
+  } else if (num === 6) {
+    die6.style.display = "block";
+  }
+  return num;
 }
 
-let player1Btn = document.getElementById("player1btn");
+let die1 = document.getElementById("dice-1.png");
+let die2 = document.getElementById("dice-2.png");
+let die3 = document.getElementById("dice-3.png");
+let die4 = document.getElementById("dice-4.png");
+let die5 = document.getElementById("dice-5.png");
+let die6 = document.getElementById("dice-6.png");
 
-let player2Btn = document.getElementById("player2btn");
+let dieArr = [die1, die2, die3, die4, die5, die6];
+
+dieArr.forEach(function (die) {
+  die.style.display = "none";
+});
+
+let player1Btn = document.getElementById("player1Btn");
+
+let player2Btn = document.getElementById("player2Btn");
 
 player1Btn.addEventListener("click", function (event) {
   let dieRoll = rollDie();
@@ -138,3 +159,13 @@ function init() {
 
 let resetElm = document.getElementById("reset");
 resetElm.addEventListener("click", init);
+
+function determineWinner() {
+  if (gameState.player1 >= 100) {
+    gameState.player1Score++;
+    console.log("Player 1 wins");
+  } else if (gameState.player2 >= 100) {
+    gameState.player2Score++;
+    console.log("Player 2 wins");
+  }
+}

@@ -10,14 +10,15 @@ td {
 
 table {
   margin-left: 500px;
+  margin-top: -75px;
 }
 
-#player1btn {
+#player1Btn {
   margin-left: 500px;
   margin-top: 20px;
 }
 
-#player2btn {
+#player2Btn {
   margin-left: 50px;
 }
 
@@ -35,4 +36,28 @@ h1 {
 
 #player2 {
   color: blue;
+}
+
+#scores {
+  margin-right: 500px;
+  font-size: 15px;
+}
+
+#p1-score-title {
+  color: red;
+}
+
+#p2-score-title {
+  color: blue;
+}
+
+.p1Score,
+.p2Score {
+  position: relative;
+  height: 50px;
+  min-width: 50px;
+  color: red;
+}
+
+.winText {
 }
