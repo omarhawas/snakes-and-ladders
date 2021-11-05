@@ -56,13 +56,14 @@ h1 {
   color: blue;
 }
 
-.die-image {
-  margin-top: -500px;
-}
-
 .winText {
   color: black;
   margin-top: 30px;
+}
+
+.die-image {
+  margin-top: -450px;
+  margin-left: 135px;
 }
 
 td {
@@ -90,4 +91,24 @@ td {
 
 .game-container {
   margin-top: 35px;
+}
+
+img {
+  border: 5px solid black;
+}
+
+.head {
+  margin-left: 465px;
+}
+
+#player-1-name {
+  margin-left: 300px;
+}
+
+#player-2-name {
+  margin-left: 300px;
+}
+
+.winText {
+  margin-left: 300px;
 }
