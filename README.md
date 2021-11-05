@@ -33,6 +33,10 @@ Rules:
 - A player wins once they reach the last square on the board.
 - The winning player gets one point added to their score tally.
 
+Play Here:
+
+https://omarhawas.github.io/snakes-and-ladders/
+
 Additional Features:
 
 - Enter your name and your opponents name at the top of the screen
