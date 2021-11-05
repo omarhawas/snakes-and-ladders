@@ -64,3 +64,30 @@ h1 {
   color: black;
   margin-top: 30px;
 }
+
+td {
+  background-color: #11c70b;
+  color: white;
+}
+
+.snake-end {
+  background-color: yellow;
+  color: black;
+}
+
+.snake-begin {
+  background-color: yellow;
+  color: black;
+}
+
+.ladder-end {
+  background-color: rgb(128, 142, 182);
+}
+
+.ladder-begin {
+  background-color: rgb(128, 142, 182);
+}
+
+.game-container {
+  margin-top: 35px;
+}

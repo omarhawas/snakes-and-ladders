@@ -3,6 +3,8 @@ let gameState = {
   player2: 1,
   player1Score: 0,
   player2Score: 0,
+  player1Name: "",
+  player2Name: "",
 };
 
 /////elements/////
@@ -25,6 +27,16 @@ let p1ScoreElm = document.querySelector(".p1Score");
 
 let p2ScoreElm = document.querySelector(".p2Score");
 
+let p1NameElm = document.querySelector("#player-1-name");
+
+let p2NameElm = document.querySelector("#player-2-name");
+
+let p1InputElm = document.querySelector("#player-1-input");
+
+let p2InputElm = document.querySelector("#player-2-input");
+
+let submitNamesElm = document.querySelector("#submit-names");
+
 let die1 = document.getElementById("die-1.png");
 let die2 = document.getElementById("die-2.png");
 let die3 = document.getElementById("die-3.png");
@@ -43,11 +55,11 @@ dieArr.forEach(function (die) {
 function determineWinner() {
   if (gameState.player1 >= 100) {
     gameState.player1Score++;
-    winTextElm.innerText = "Player 1 wins!";
+    winTextElm.innerText = `${gameState.player1Name} wins!`;
     disableBothButtons();
   } else if (gameState.player2 >= 100) {
     gameState.player2Score++;
-    winTextElm.innerText = "Player 2 wins!";
+    winTextElm.innerText = `${gameState.player2Name} wins!`;
     disableBothButtons();
   }
 }
@@ -195,14 +207,27 @@ function playAgain() {
 }
 
 function reset() {
-  gameState.player1 = 1;
-  gameState.player2 = 1;
   gameState.player1Score = 0;
   gameState.player2Score = 0;
+  gameState.player1 = 1;
+  gameState.player2 = 1;
   disableButton(true);
   movePlayer1();
   movePlayer2();
   winTextElm.innerText = "Who's going to win!?";
+  updateScore();
+}
+
+function updateScore() {
+  p1ScoreElm.innerText = `${gameState.player1Score}`;
+  p2ScoreElm.innerText = `${gameState.player2Score}`;
+}
+
+function updateNames() {
+  gameState.player1Name = p1InputElm.value;
+  gameState.player2Name = p2InputElm.value;
+  gameState.player1Name = p1NameElm.innerText = `${gameState.player1Name}`;
+  p2NameElm.innerText = `${gameState.player2Name}`;
 }
 
 /////event listeners/////
@@ -235,7 +260,4 @@ playAgainElm.addEventListener("click", playAgain);
 
 resetBtn.addEventListener("click", reset);
 
-function updateScore() {
-  p1ScoreElm.innerText = `Player 1 Score: ${gameState.player1Score}`;
-  p2ScoreElm.innerText = `Player 2 Score: ${gameState.player2Score}`;
-}
+submitNamesElm.addEventListener("click", updateNames);
