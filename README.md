@@ -10,13 +10,17 @@ Roll the die and test your luck!
 
 Screenshots:
 
-![screenshotImage](./pic1.png)
+![screenshotImage](./assets/images
+/pic1.png)
 
-![screenshotImage](./pic4.png)
+![screenshotImage](./assets/images
+/pic4.png)
 
-![screenshotImage](./pic3.png)
+![screenshotImage](./assets/images
+/pic3.png)
 
-![screenshotImage](./pic2.png)
+![screenshotImage](./assets/images
+/pic2.png)
 
 Technologies Used:
 
