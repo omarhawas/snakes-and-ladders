@@ -1,0 +1,23 @@
+{
+  "name": "snakes-and-ladders",
+  "version": "1.0.0",
+  "description": "Snakes & Ladders",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omarhawas/snakes-and-ladders.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/omarhawas/snakes-and-ladders/issues"
+  },
+  "homepage": "https://github.com/omarhawas/snakes-and-ladders#readme",
+  "devDependencies": {
+    "mocha": "^9.1.3"
+  }
+}
